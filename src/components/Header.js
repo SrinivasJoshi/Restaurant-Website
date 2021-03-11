@@ -5,7 +5,6 @@ import Navbar from './Navbar';
 const Header = () => {
     return ( 
         <div className="header">
-            <img src={headerBg} alt=""/>
             <Navbar></Navbar>
             <div className="main-title">
 
