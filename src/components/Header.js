@@ -1,6 +1,7 @@
 import React from 'react';
 import headerBg from '../images/header-bg.png';
 import Navbar from './Navbar';
+import {motion} from 'framer-motion';
 
 const Header = () => {
     return ( 
@@ -8,14 +9,34 @@ const Header = () => {
             <Navbar></Navbar>
             <div className="main-title">
 
-                <div className="title">
+                <motion.div className="title"
+                initial={{opacity:0}}
+                animate={{opacity:1}}
+                transition={{delay:.8,duration:1}}
+                >
                 <p>RESTAURANT</p>
                 <h1>HUNGRY PEOPLE</h1>
-                </div>
+                </motion.div>
                 
                 <div className="btns">
-                <button>BOOK TABLE</button>
-                <button>EXPLORE</button>
+                <motion.button
+                initial={
+                    {x:'-100vw',y:0}
+                }
+                animate={
+                    {x:0,y:0 }
+                }
+                transition={{type:'spring',delay:.3,stiffness:17}}
+                >BOOK TABLE</motion.button>
+                < motion.button
+                initial={
+                    {x:'100vw',y:0}
+                }
+                transition={{type:'spring',delay:.3,stiffness:17}}
+                animate={
+                    {x:0,y:0 }
+                }
+                >EXPLORE</motion.button>
                 </div>
             </div>
         </div>

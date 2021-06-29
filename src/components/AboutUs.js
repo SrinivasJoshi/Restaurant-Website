@@ -1,9 +1,17 @@
 import React from 'react';
 import abtImg from '../images/about-img.png';
 import abtSqr from '../images/about-square.png';
+import { motion } from 'framer-motion';
+import { Frame, Scroll } from 'framer' 
+
+
 
 const AboutUs = () => {
+    function onScroll(info) {
+        console.log(info.offset, info.velocity)
+      }
     return ( 
+        
         <div className="aboutus">
             <div className="abt-text">
                 <h1>ABOUT US</h1>
@@ -16,10 +24,12 @@ const AboutUs = () => {
                    semper laoreet.</p>
             </div>
             <div className="abt-img">
-                <img src={abtImg} alt=""/>
-                <img src={abtSqr} alt=""/>
+                <motion.img initial={{opacity:0}} animate={{opacity:1}} src={abtImg} alt="" loading="lazy" />
+                <motion.img initial={{opacity:0}} animate={{opacity:1}} src={abtSqr} alt="" loading="lazy"/>
             </div>
+            
         </div>
+        
      );
 }
  
